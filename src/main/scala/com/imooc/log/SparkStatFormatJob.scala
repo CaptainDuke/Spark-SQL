@@ -1,6 +1,6 @@
 package com.imooc.log
 
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{SaveMode, SparkSession}
 
 /*
   第一步清洗：抽取出我们所需要的指定列的数据
@@ -19,6 +19,10 @@ object SparkStatFormatJob {
     accessDF.printSchema()
 
     accessDF.show(false)
+
+    accessDF.coalesce(1).write.format("parquet").mode(SaveMode.Overwrite)
+        .partitionBy("day")
+        .save("/Users/captwang/workspace/imooc/spark-sql/clean")
 
     spark.stop()
 

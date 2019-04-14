@@ -9,6 +9,10 @@ object TopNStatJob {
 
   def videoAccessTopNStat(spark: SparkSession, accessDF: DataFrame): Unit = {
 
+
+    /*
+    使用 DataFrame 方式统计
+     */
 //    import spark.implicits._
 //
 //    val videoAccessTopNDF = accessDF.filter($"day" === "20170511" && $"cmsType" === "video")
@@ -16,6 +20,10 @@ object TopNStatJob {
 //
 //    videoAccessTopNDF.show(false)
 
+
+    /*
+    使用SparkSQL方式统计
+     */
     accessDF.createOrReplaceTempView("access_logs")
     val videoAccessTopNDF = spark.sql("select day, cmsId, count(1) as times from access_logs " +
       "where day='20170511' and cmsType='video' " +

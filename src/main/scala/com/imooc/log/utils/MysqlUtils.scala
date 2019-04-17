@@ -5,7 +5,7 @@ import java.sql.{Connection, DriverManager, PreparedStatement}
 object MysqlUtils {
 
   def getConnection() = {
-    DriverManager.getConnection("jdbc:mysql://localhost:3306/database?user=root&password=xxxx")
+    DriverManager.getConnection("jdbc:mysql://localhost:6603/database?user=root&password=Wyd_231231")
   }
 
   def release(connection: Connection, pstmt: PreparedStatement): Unit ={

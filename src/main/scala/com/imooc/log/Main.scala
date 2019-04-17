@@ -10,9 +10,9 @@ import scala.collection.mutable.ListBuffer
 object Main {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("StatInfo").master("local[2]").getOrCreate()
+    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
 
-    val access = spark.sparkContext.textFile("file:///home/arby/Desktop/CloudProject/temp.log")
+    val access = spark.sparkContext.textFile("file:///Users/captwang/Desktop/temp.log")
 
     val cleanedLogRDD = access.map(eachLine => {
       val splitsElements = eachLine.split(" ")
@@ -31,10 +31,11 @@ object Main {
       else None
     }).filter(line => line!=None)
 
-    val learnNameRDD = spark.sparkContext.textFile("file:///home/arby/imooc_learn_name_result.txt")
+
+    val learnNameRDD = spark.sparkContext.textFile("file:///Users/captwang/Desktop/imooc_learn_name_result.txt")
     val learnNameDF = spark.createDataFrame(learnNameRDD.map(eachLine => ConvertUtils.learnParser(eachLine)), ConvertUtils.learnStruct)
 
-    val videoNameRDD = spark.sparkContext.textFile("file:///home/arby/imooc_video_name_result.txt")
+    val videoNameRDD = spark.sparkContext.textFile("file:///Users/captwang/Desktop/imooc_video_name_result.txt")
     val videoNameDF = spark.createDataFrame(videoNameRDD.map(eachLine => ConvertUtils.videoParser(eachLine)), ConvertUtils.videoStruct)
 
     import spark.implicits._
@@ -45,15 +46,17 @@ object Main {
     learnNVideoDF.show(false)
 
     val cleanedLogDF = spark.createDataFrame(cleanedLogRDD.map(eachLine => ConvertUtils.parser(eachLine.toString)), ConvertUtils.struct)
+    cleanedLogDF.printSchema()
+    cleanedLogDF.show(false)
 
-    videoTopNPerDay(spark, cleanedLogDF)
-
-    articleTopNPerDay(spark, cleanedLogDF)
-
-    videoTopNPerDayPerCity(spark, cleanedLogDF)
-
-    videoTopNPerDayTraffic(spark, cleanedLogDF)
-
+//    videoTopNPerDay(spark, cleanedLogDF)
+//
+//    articleTopNPerDay(spark, cleanedLogDF)
+//
+//    videoTopNPerDayPerCity(spark, cleanedLogDF)
+//
+//    videoTopNPerDayTraffic(spark, cleanedLogDF)
+//
 
     spark.stop()
   }

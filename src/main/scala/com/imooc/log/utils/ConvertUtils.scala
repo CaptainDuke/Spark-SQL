@@ -14,7 +14,7 @@ object ConvertUtils {
       StructField("ip", StringType),
       StructField("city", StringType),
       StructField("time", StringType),
-      StructField("day", StringType)
+      StructField("minute", LongType)
     )
   )
 
@@ -27,8 +27,8 @@ object ConvertUtils {
 
   val videoStruct = StructType(
     Array(
-      StructField("learnUrl", StringType),
       StructField("url", StringType),
+      StructField("videoUrl", StringType),
       StructField("name", StringType)
     )
   )
@@ -40,7 +40,11 @@ object ConvertUtils {
       val splits = log.split("\t")
 
       val time = splits(0)
-      val day = time.substring(0, 10).replaceAll("-", "")
+      val day = time.substring(11, 19).split(":")
+
+      val minute = day(0).toLong * 60l + day(1).toLong
+
+
 
       var url = splits(1)
       val domain = "imooc.com"
@@ -59,7 +63,7 @@ object ConvertUtils {
       val ip = splits(3)
       var city = IpUtils.getCity(ip)
 
-      Row(url, sourceType, sourceId, traffic, ip, city, time, day)
+      Row(url, sourceType, sourceId, traffic, ip, city, time, minute)
     } catch {
       case e: Exception => Row(0)
     }
@@ -76,7 +80,7 @@ object ConvertUtils {
       var name = ""
 
       learnUrl = splits(0)
-      url = splits(1)
+      url = splits(1).replaceAll(" ", "")
       name = splits(2)
 
 
@@ -110,5 +114,10 @@ object ConvertUtils {
   def main(args: Array[String]): Unit = {
     print(learnParser("/learn/90, 展开与收起效果"))
     print(videoParser("/learn/40, /video/485, 5-1学以致用——Sublime综合技巧运用(07:00)"))
+    val time = "2016-11-09 10:01:02"
+    val day = time.substring(11, 19).split(":")
+
+    val minute = day(0).toLong * 60l + day(1).toLong
+    print(minute)
   }
 }

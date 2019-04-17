@@ -21,12 +21,13 @@ object Main {
       val url = splitsElements(11).replaceAll("\"", "")
       val traffic = splitsElements(9)
 
-      //(ip, DateUtils.parseFormat(time), url, traffic)
+      //(ip, DateUtils.parseFormat(time), url, traffic)(url.contains("imooc.com/learn/")
       if(traffic!="0"
-        && (url.contains("imooc.com/learn/")
-        ||url.contains("imooc.com/video/")
+
+        &&(url.contains("imooc.com/video/")
         ||url.contains("imooc.com/article/")
-        ||url.contains("imooc.com/code/")))
+        ||url.contains("imooc.com/code/")
+        ||url.contains("imooc.com/learn/")))
         DateUtils.parseFormat(time) + '\t' + url + '\t' + traffic + '\t' + ip
       else None
     }).filter(line => line!=None)
@@ -40,16 +41,17 @@ object Main {
 
     import spark.implicits._
 
-    val learnNVideoDF = learnNameDF.joinWith(videoNameDF, learnNameDF("url")===videoNameDF("learnUrl"))
+    val learnNVideoDF = learnNameDF.joinWith(videoNameDF, learnNameDF("url")===videoNameDF("url")).toDF()
+      .withColumnRenamed("_1", "learn").withColumnRenamed("_2", "video")
 
-    learnNVideoDF.printSchema()
-    learnNVideoDF.show(false)
+/*    learnNVideoDF.printSchema()
+    learnNVideoDF.show(false)*/
 
     val cleanedLogDF = spark.createDataFrame(cleanedLogRDD.map(eachLine => ConvertUtils.parser(eachLine.toString)), ConvertUtils.struct)
-    cleanedLogDF.printSchema()
-    cleanedLogDF.show(false)
+//    cleanedLogDF.printSchema()
+//    cleanedLogDF.show(false)
 
-//    videoTopNPerDay(spark, cleanedLogDF)
+    videoTopNPerDay(spark, cleanedLogDF, learnNVideoDF)
 //
 //    articleTopNPerDay(spark, cleanedLogDF)
 //
@@ -63,28 +65,42 @@ object Main {
 
 
 
-  def videoTopNPerDay(session: SparkSession, frame: DataFrame): Unit = {
+  def videoTopNPerDay(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit = {
     import session.implicits._
 
-    val videoTopNDF = frame.filter($"sourceType"==="video" || $"sourceType" === "code")
-      .groupBy($"day", $"url").agg(count("sourceId").as("times")).orderBy($"times".desc)
+/*    frame.printSchema()
+    frame.show(false)
+    learnNVideoDF.printSchema()
+    learnNVideoDF.show(false)*/
 
-    //videoTopNDF.show(false)
+//    learnNVideoDF.select($"video.videoUrl").show(false)
+
+
+    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+
+    frameTemp.printSchema()
+    frameTemp.show(false)
+    val videoTopNDF = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
+      .groupBy($"originLog.minute", $"courseMenu.learn.name").agg(count("*").as("times")).orderBy($"times".desc)
+
+    videoTopNDF.show(false)
+
 
 
     try {
       videoTopNDF.foreachPartition(partition => {
-        val list = new ListBuffer[DayVideoTimes]
+        val list = new ListBuffer[MinuteVideoTimes]
 
         partition.foreach(record => {
-          val day = record.getAs[String]("day")
-          val url = record.getAs[String]("url")
+          val minute = record.getAs[Long]("minute")
+          val name = record.getAs[String]("name")
           val times = record.getAs[Long]("times")
 
-          list.append(DayVideoTimes(day, url, times))
+          list.append(MinuteVideoTimes(minute, name, times))
         })
 
-        StatDAO.insertDayVideoTimes(list)
+        StatDAO.insertMinuteVideoTimes(list)
       })
     } catch {
       case e: Exception => e.printStackTrace()

@@ -7,7 +7,7 @@ import com.imooc.log.utils.MysqlUtils
 import scala.collection.mutable.ListBuffer
 
 object StatDAO {
-  def insertDayVideoTimes(list: ListBuffer[DayVideoTimes]): Unit ={
+  def insertMinuteVideoTimes(list: ListBuffer[MinuteVideoTimes]): Unit ={
     var connection: Connection = null
     var pstmt: PreparedStatement = null
 
@@ -17,12 +17,12 @@ object StatDAO {
 
       connection.setAutoCommit(false)
 
-      val sql = "insert into table_name(attr1, attr2, attr3) values (?, ?, ?)"
+      val sql = "insert into SPARKTABLE(minute, course_name, times) values (?, ?, ?)"
       pstmt = connection.prepareStatement(sql)
 
       for(item <- list) {
-        pstmt.setString(1, item.day)
-        pstmt.setString(2, item.url)
+        pstmt.setLong(1, item.minute)
+        pstmt.setString(2, item.name)
         pstmt.setLong(3, item.times)
 
         pstmt.addBatch()

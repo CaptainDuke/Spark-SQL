@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ce22df5-e53f-4498-82ad-602cc1f45774" name="Default Changelist" comment="" />
+    <list default="true" id="8ce22df5-e53f-4498-82ad-602cc1f45774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/MinuteVideoTimes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimes.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayVideoTimes$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayVideoTimes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1$$anonfun$apply$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1$$anonfun$apply$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1$$anonfun$apply$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1$$anonfun$apply$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1$$anonfun$apply$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1$$anonfun$apply$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDay$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDay$1$$anonfun$apply$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDay$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1$$anonfun$apply$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1$$anonfun$apply$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1$$anonfun$apply$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1$$anonfun$apply$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/ConvertUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/ConvertUtils$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/DateUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/DateUtils$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/DateUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/MysqlUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/MysqlUtils$.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,13 +47,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+            <state relative-caret-position="135">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="e#23#76#0" expanded="true" />
               </folding>
@@ -24,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/IpUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state relative-caret-position="105">
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -36,44 +87,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="55" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="55" />
+            <state relative-caret-position="120">
+              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/MySQLUtilsYARN.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/AccessConvertUtil.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/SparkStatFormatJob.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/IpUtils.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="735">
+              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -81,26 +114,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            <state relative-caret-position="360">
+              <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimesCity.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTraffics.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
+            <state relative-caret-position="3405">
+              <caret line="227" column="34" selection-start-line="227" selection-start-column="34" selection-end-line="227" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/MinuteVideoTimes.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -123,6 +174,11 @@
       <find>spark</find>
       <find>sql</find>
       <find>provided</find>
+      <find>video/143</find>
+      <find>1412</find>
+      <find>day</find>
+      <find>learn/85</find>
+      <find>mysql</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,21 +198,21 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/TopNStatJob.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/SparkStatFormatJobYARN.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/MySQLUtils.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/IpUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatInfo.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayArticleTimes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayArticleTimesCity.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayArticleTraffics.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimesCity.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTraffics.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/MySQLUtilsYARN.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" />
       </list>
     </option>
   </component>
@@ -194,6 +250,11 @@
             <path>
               <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
               <item name="sqltest1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sqltest1" type="462c0819:PsiDirectoryNode" />
+              <item name="ipdatabase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
@@ -239,6 +300,16 @@
             </path>
             <path>
               <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sqltest1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="imooc" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -248,9 +319,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555484979743" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555501585598" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -282,12 +354,25 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="IpUtils" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.imooc.log.IpUtils" />
+    <configuration name="ConvertUtils" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.imooc.log.utils.ConvertUtils" />
       <module name="sqltest1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.imooc.log.*" />
+          <option name="PATTERN" value="com.imooc.log.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateUtils" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.imooc.log.utils.DateUtils" />
+      <module name="sqltest1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.imooc.log.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -297,19 +382,6 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.imooc.log.Main" />
-      <module name="sqltest1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.imooc.log.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SparkStatFormatJob$" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.imooc.log.SparkStatFormatJob$" />
       <module name="sqltest1" />
       <extension name="coverage">
         <pattern>
@@ -350,10 +422,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ConvertUtils" />
+        <item itemvalue="Application.DateUtils" />
         <item itemvalue="Application.SparkStatFormatJob" />
         <item itemvalue="Application.TopNStatJob" />
-        <item itemvalue="Application.SparkStatFormatJob$" />
-        <item itemvalue="Application.IpUtils" />
       </list>
     </recent_temporary>
   </component>
@@ -371,12 +443,12 @@
       <workItem from="1555170077202" duration="8892000" />
       <workItem from="1555180928345" duration="92000" />
       <workItem from="1555181067605" duration="13674000" />
-      <workItem from="1555483064066" duration="1953000" />
+      <workItem from="1555483064066" duration="16165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26995000" />
+    <option name="totallyTimeSpent" value="41207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,8 +461,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27181688" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18240343" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -399,23 +472,23 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.40509555" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49785408" visible="true" weight="0.2611465" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.32891566" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4985694" weight="0.32866243" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31719744" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50214595" side_tool="true" weight="0.9414013" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49928468" weight="0.2267516" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
@@ -447,20 +520,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/ipDatabase.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/IpUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/AccessConvertUtil.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../../../app/maven_repos/org/apache/spark/spark-core_2.11/2.4.0/spark-core_2.11-2.4.0.jar!/org/apache/spark/rdd/RDD.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -484,13 +543,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatInfo.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/TopN.scala" />
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/CleanLog.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/DayArticleTimes.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -507,13 +559,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/DayArticleTraffics.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimes.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="21" selection-start-column="21" selection-end-column="21" />
@@ -541,34 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/SparkStatFormatJob.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/MySQLUtilsYARN.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -576,20 +593,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/SparkStatFormatJob.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/imooc_video_name_result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="106" column="21" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/temp.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="54" column="148" selection-start-line="54" selection-start-column="145" selection-end-line="54" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/MinuteVideoTimes.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3405">
+          <caret line="227" column="34" selection-start-line="227" selection-start-column="34" selection-end-line="227" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/866118e6-05bf-48fe-8377-b790cb9bf870/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/AccessConvertUtil.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#23#76#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/IpUtils.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state relative-caret-position="105">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>

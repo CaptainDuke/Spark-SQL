@@ -23,7 +23,7 @@ object DateUtils {
     }
   }
 
-/*  def main(args: Array[String])= {
+  def main(args: Array[String])= {
     println(parseFormat("[09/Nov/2016:00:01:02 +0800]"))
-  }*/
+  }
 }

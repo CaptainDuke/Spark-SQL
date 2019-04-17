@@ -56,7 +56,7 @@ object AccessConvertUtil {
 
 
     } catch {
-      case e:Exception => Row(0)
+      case e:Exception => Row("","",0L,0,"","","")
     }
 
 

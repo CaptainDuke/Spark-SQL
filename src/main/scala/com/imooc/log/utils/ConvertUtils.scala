@@ -65,7 +65,7 @@ object ConvertUtils {
 
       Row(url, sourceType, sourceId, traffic, ip, city, time, minute)
     } catch {
-      case e: Exception => Row(0)
+      case e: Exception => Row("","",0l,0l,"","","",0l)
     }
 
   }
@@ -106,7 +106,11 @@ object ConvertUtils {
 
       Row(url, name)
     } catch {
-      case e: Exception => Row(0)
+      case e: Exception => {
+        print(e.printStackTrace())
+        Row(0)
+      }
+
     }
 
   }

@@ -10,9 +10,23 @@ import scala.collection.mutable.ListBuffer
 object Main {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
 
-    val access = spark.sparkContext.textFile("file:///Users/captwang/Desktop/temp.log")
+    if(args.length != 4){
+
+      println("<input log path>", "<input learn file>", "<input video file>", "<output files>")
+      System.exit(1)
+    }
+
+    val Array(inputPath, learnFile, videoFile, outputPath) = args
+
+
+
+
+    //val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
+    val spark = SparkSession.builder().getOrCreate()
+
+
+    val access = spark.sparkContext.textFile( inputPath) //"file:///Users/captwang/Desktop/temp.log")
 
     val cleanedLogRDD = access.map(eachLine => {
       val splitsElements = eachLine.split(" ")
@@ -33,10 +47,13 @@ object Main {
     }).filter(line => line!=None)
 
 
-    val learnNameRDD = spark.sparkContext.textFile("file:///Users/captwang/Desktop/imooc_learn_name_result.txt")
+    val temp = cleanedLogRDD
+    temp.repartition(1).saveAsTextFile(outputPath)//"file:///Users/rocky/data/imooc/output/")
+
+    val learnNameRDD = spark.sparkContext.textFile(learnFile)//"file:///Users/captwang/Desktop/imooc_learn_name_result.txt")
     val learnNameDF = spark.createDataFrame(learnNameRDD.map(eachLine => ConvertUtils.learnParser(eachLine)), ConvertUtils.learnStruct)
 
-    val videoNameRDD = spark.sparkContext.textFile("file:///Users/captwang/Desktop/imooc_video_name_result.txt")
+    val videoNameRDD = spark.sparkContext.textFile(videoFile)//"file:///Users/captwang/Desktop/imooc_video_name_result.txt")
     val videoNameDF = spark.createDataFrame(videoNameRDD.map(eachLine => ConvertUtils.videoParser(eachLine)), ConvertUtils.videoStruct)
 
     import spark.implicits._

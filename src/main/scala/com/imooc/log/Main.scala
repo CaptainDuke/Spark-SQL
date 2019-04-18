@@ -115,16 +115,20 @@ object Main {
 //
 //    videoTopNPerDayTraffic(spark, cleanedLogDF)
 //
-    labelCityTimes(spark,cleanedLogDF, learnNVideoDF)
+
+    val arg = List[(SparkSession,DataFrame,DataFrame)=>Unit](labelCityTimes, labelMinuteTimes,minuteCityTimes)
+
+    arg.par.foreach(f=>f(spark,cleanedLogDF, learnNVideoDF))
+    /*labelCityTimes(spark,cleanedLogDF, learnNVideoDF)
     labelMinuteTimes(spark,cleanedLogDF, learnNVideoDF)
 
-    minuteCityTimes(spark,cleanedLogDF)
+    minuteCityTimes(spark,cleanedLogDF,learnNVideoDF)*/
     spark.stop()
   }
 
 
 
-  def minuteCityTimes(session: SparkSession, frame: DataFrame): Unit ={
+  def minuteCityTimes(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit ={
     import session.implicits._
 
 //    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()

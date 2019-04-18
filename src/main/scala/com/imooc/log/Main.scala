@@ -13,7 +13,15 @@ object Main {
 
 
 
-    val remote_flag = 0
+    val remote_flag = 1
+    /*
+      1. 改 flag
+      2. 改 master("local[2]")
+      3. 改 pom.xml
+      4. 改 MysqlUtils -uwang -pwang
+     */
+
+
 
     //val Array(inputPath, learnFile, videoFile, outputPath) = ("", "", "", "")
 
@@ -47,8 +55,8 @@ object Main {
 
 
 
-    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
-//    val spark = SparkSession.builder().getOrCreate()
+//    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
+    val spark = SparkSession.builder().getOrCreate()
 
 
 
@@ -107,8 +115,8 @@ object Main {
 //
 //    videoTopNPerDayTraffic(spark, cleanedLogDF)
 //
-//    labelCityTimes(spark,cleanedLogDF, learnNVideoDF)
-//    labelMinuteTimes(spark,cleanedLogDF, learnNVideoDF)
+    labelCityTimes(spark,cleanedLogDF, learnNVideoDF)
+    labelMinuteTimes(spark,cleanedLogDF, learnNVideoDF)
 
     minuteCityTimes(spark,cleanedLogDF)
     spark.stop()

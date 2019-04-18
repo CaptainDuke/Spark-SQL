@@ -2,46 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ce22df5-e53f-4498-82ad-602cc1f45774" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/LabelCityElement.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/LabelMinuteElement.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/MinuteCityElement.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1$$anonfun$apply$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1$$anonfun$apply$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1$$anonfun$apply$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDay$1$$anonfun$apply$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDay$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1$$anonfun$apply$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1$$anonfun$apply$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimesCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimesCity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTraffics$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTraffics$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTimesCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTimesCity$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTraffics$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTraffics$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteVideoTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteVideoTimes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/ConvertUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/ConvertUtils$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/MysqlUtils$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/MysqlUtils$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/imooc_learn_name_result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/imooc_learn_name_result.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/AccessConvertUtil$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/AccessConvertUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayArticleTimes$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayArticleTimes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayArticleTimesCity$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayArticleTimesCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayArticleTraffics$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayArticleTraffics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayVideoTimesCity$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayVideoTimesCity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayVideoTraffics$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/DayVideoTraffics.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/IpUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/IpUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/LabelCityElement$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/LabelCityElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/LabelMinuteElement$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/LabelMinuteElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1$$anonfun$apply$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1$$anonfun$apply$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1$$anonfun$apply$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayTraffic$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelCityTimes$1$$anonfun$apply$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelCityTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelMinuteTimes$1$$anonfun$apply$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelMinuteTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$minuteCityTimes$1$$anonfun$apply$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$minuteCityTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1$$anonfun$apply$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1$$anonfun$apply$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayTraffic$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerMinute$1$$anonfun$apply$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerMinute$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/MinuteCityElement$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/MinuteCityElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/MinuteVideoTimes$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/MinuteVideoTimes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/MySQLUtilsYARN$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/MySQLUtilsYARN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJob$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJob$$anonfun$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJob$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJobYARN$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJobYARN$$anonfun$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJobYARN$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/SparkStatFormatJobYARN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimesCity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTraffics$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTimesCity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTraffics$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertLabelCityTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertLabelMinuteTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteCity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteVideoTimes$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/TopNStatJob$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/TopNStatJob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/ConvertUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/ConvertUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/DateUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/IpUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/IpUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/MysqlUtils$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/utils/MysqlUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imooc_learn_name_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imooc_video_name_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ipDatabase.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ipRegion.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/temp.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sqltest1-1.0-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/sqltest1-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/imooc/spark/SparkSessionApp$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/imooc/spark/SparkSessionApp.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,11 +129,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="113" column="16" lean-forward="true" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
+            <state relative-caret-position="532">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#23#76#0" expanded="true" />
               </folding>
@@ -102,11 +159,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -132,8 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            <state relative-caret-position="630">
+              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -141,17 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-787">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1954">
-              <caret line="830" column="25" selection-start-line="830" selection-end-line="831" />
+            <state relative-caret-position="1245">
+              <caret line="84" column="39" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -159,8 +216,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="84" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -223,15 +280,15 @@
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/DayVideoTimes.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/AccessConvertUtil.scala" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/LabelCityElement.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/LabelMinuteElement.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/MinuteCityElement.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" />
       </list>
     </option>
   </component>
@@ -317,6 +374,16 @@
             </path>
             <path>
               <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sqltest1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="imooc" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sqltest1" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -331,7 +398,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555599062391" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555605840563" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -453,12 +520,12 @@
       <workItem from="1555180928345" duration="92000" />
       <workItem from="1555181067605" duration="13674000" />
       <workItem from="1555483064066" duration="22237000" />
-      <workItem from="1555587160466" duration="9266000" />
+      <workItem from="1555587160466" duration="11583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56545000" />
+    <option name="totallyTimeSpent" value="58862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -473,7 +540,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -509,30 +576,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala</url>
-          <line>84</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala</url>
-          <line>82</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/scala/com/imooc/spark/package.scala" />
@@ -666,38 +709,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/ipDatabase.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/imooc_learn_name_result.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1954">
           <caret line="830" column="25" selection-start-line="830" selection-end-line="831" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="84" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-787">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -729,20 +744,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="113" column="16" lean-forward="true" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="16" />
-          <folding>
-            <element signature="e#23#76#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/DateUtils.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/ConvertUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="84" column="39" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/utils/MysqlUtils.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#23#76#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

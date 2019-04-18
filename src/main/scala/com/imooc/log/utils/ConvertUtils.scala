@@ -82,7 +82,7 @@ object ConvertUtils {
 
       learnUrl = splits(0)
       url = splits(1).replaceAll(" ", "")
-      name = splits(2)
+      name = splits(2).replace(" ", "")
 
 
       Row(learnUrl, url, name)
@@ -103,8 +103,8 @@ object ConvertUtils {
       var label = ""
 
       url = splits(0)
-      name = splits(1)
-      label = splits(2)
+      name = splits(1).replace(" ", "")
+      label = splits(2).replace(" ", "")
 
 
       Row(url, name, label)

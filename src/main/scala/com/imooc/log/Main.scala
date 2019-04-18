@@ -11,22 +11,53 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
-    if(args.length != 4){
 
-      println("<input log path>", "<input learn file>", "<input video file>", "<output files>")
-      System.exit(1)
+
+    val remote_flag = 0
+
+    //val Array(inputPath, learnFile, videoFile, outputPath) = ("", "", "", "")
+
+    var inputPath = ""
+    var learnFile = ""
+    var videoFile = ""
+    var outputPath = ""
+    if (remote_flag==1){
+      //val Array(inputPath, learnFile, videoFile, outputPath) = args
+      if(args.length != 4){
+
+        println("<input log path>", "<input learn file>", "<input video file>", "<output files>")
+        System.exit(1)
+      }
+      inputPath = args(0)
+      learnFile = args(1)
+      videoFile = args(2)
+      outputPath = args(3)
+
+    } else{
+      inputPath = "file:///Users/captwang/Desktop/temp.log"
+      learnFile = "file:///Users/captwang/Desktop/imooc_learn_name_result2.txt"
+      videoFile = "file:///Users/captwang/Desktop/imooc_video_name_result.txt"
+      //spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
     }
 
-    val Array(inputPath, learnFile, videoFile, outputPath) = args
+    //
 
 
 
 
-    //val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
-    val spark = SparkSession.builder().getOrCreate()
 
 
-    val access = spark.sparkContext.textFile( inputPath) //"file:///Users/captwang/Desktop/temp.log")
+    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
+//    val spark = SparkSession.builder().getOrCreate()
+
+
+
+    val access = spark.sparkContext.textFile(inputPath) //"file:///Users/captwang/Desktop/temp.log")
+
+    val learnNameRDD = spark.sparkContext.textFile(learnFile)//"file:///Users/captwang/Desktop/imooc_learn_name_result.txt")
+
+    val videoNameRDD = spark.sparkContext.textFile(videoFile)//"file:///Users/captwang/Desktop/imooc_video_name_result.txt")
+
 
     val cleanedLogRDD = access.map(eachLine => {
       val splitsElements = eachLine.split(" ")
@@ -47,13 +78,12 @@ object Main {
     }).filter(line => line!=None)
 
 
-    val temp = cleanedLogRDD
-    temp.repartition(1).saveAsTextFile(outputPath)//"file:///Users/rocky/data/imooc/output/")
+    // 为了查询脏数据
+    /*val temp = cleanedLogRDD
+    temp.repartition(1).saveAsTextFile(outputPath)//"file:///Users/rocky/data/imooc/output/")*/
 
-    val learnNameRDD = spark.sparkContext.textFile(learnFile)//"file:///Users/captwang/Desktop/imooc_learn_name_result.txt")
     val learnNameDF = spark.createDataFrame(learnNameRDD.map(eachLine => ConvertUtils.learnParser(eachLine)), ConvertUtils.learnStruct)
 
-    val videoNameRDD = spark.sparkContext.textFile(videoFile)//"file:///Users/captwang/Desktop/imooc_video_name_result.txt")
     val videoNameDF = spark.createDataFrame(videoNameRDD.map(eachLine => ConvertUtils.videoParser(eachLine)), ConvertUtils.videoStruct)
 
     import spark.implicits._
@@ -61,14 +91,15 @@ object Main {
     val learnNVideoDF = learnNameDF.joinWith(videoNameDF, learnNameDF("url")===videoNameDF("url")).toDF()
       .withColumnRenamed("_1", "learn").withColumnRenamed("_2", "video")
 
-/*    learnNVideoDF.printSchema()
-    learnNVideoDF.show(false)*/
+//    learnNVideoDF.printSchema()
+//    learnNVideoDF.show(false)
 
     val cleanedLogDF = spark.createDataFrame(cleanedLogRDD.map(eachLine => ConvertUtils.parser(eachLine.toString)), ConvertUtils.struct)
-//    cleanedLogDF.printSchema()
-//    cleanedLogDF.show(false)
+    cleanedLogDF.printSchema()
+    cleanedLogDF.show(false)
 
-    videoTopNPerDay(spark, cleanedLogDF, learnNVideoDF)
+//    videoTopNPerMinute(spark, cleanedLogDF, learnNVideoDF)
+
 //
 //    articleTopNPerDay(spark, cleanedLogDF)
 //
@@ -76,13 +107,127 @@ object Main {
 //
 //    videoTopNPerDayTraffic(spark, cleanedLogDF)
 //
+//    labelCityTimes(spark,cleanedLogDF, learnNVideoDF)
+//    labelMinuteTimes(spark,cleanedLogDF, learnNVideoDF)
 
+    minuteCityTimes(spark,cleanedLogDF)
     spark.stop()
   }
 
 
 
-  def videoTopNPerDay(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit = {
+  def minuteCityTimes(session: SparkSession, frame: DataFrame): Unit ={
+    import session.implicits._
+
+//    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+//      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+//
+//    frameTemp.printSchema()
+//    frameTemp.show(false)
+
+    val minuteCity = frame.groupBy($"city", $"minute").agg(count("*").as("times"))
+
+    //labelCity.show(false)
+
+
+
+    try {
+      minuteCity.foreachPartition(partition => {
+        val list = new ListBuffer[MinuteCityElement]
+
+        partition.foreach(record => {
+          val minute = record.getAs[Long]("minute")
+          val city = record.getAs[String]("city")
+          val times = record.getAs[Long]("times")
+
+          list.append(MinuteCityElement(minute, city, times))
+        })
+
+        StatDAO.insertMinuteCity(list)
+      })
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+  }
+
+
+
+  def labelCityTimes(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit ={
+    import session.implicits._
+
+    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+
+    frameTemp.printSchema()
+    frameTemp.show(false)
+    val labelCity = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
+      .groupBy($"originLog.city", $"courseMenu.learn.label").agg(count("*").as("times"))
+
+    labelCity.show(false)
+
+
+
+    try {
+      labelCity.foreachPartition(partition => {
+        val list = new ListBuffer[LabelCityElement]
+
+        partition.foreach(record => {
+          val label = record.getAs[String]("label")
+          val city = record.getAs[String]("city")
+          val times = record.getAs[Long]("times")
+
+          list.append(LabelCityElement(label, city, times))
+        })
+
+        StatDAO.insertLabelCityTimes(list)
+      })
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+  }
+
+
+  def labelMinuteTimes(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit ={
+    import session.implicits._
+
+    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+
+    frameTemp.printSchema()
+    frameTemp.show(false)
+    val labelMinute = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
+      .groupBy($"originLog.minute", $"courseMenu.learn.label").agg(count("*").as("times"))
+
+    labelMinute.show(false)
+
+
+
+    try {
+      labelMinute.foreachPartition(partition => {
+        val list = new ListBuffer[LabelMinuteElement]
+
+        partition.foreach(record => {
+          val label = record.getAs[String]("label")
+          val minute = record.getAs[Long]("minute")
+          val times = record.getAs[Long]("times")
+
+          list.append(LabelMinuteElement(label, minute, times))
+        })
+
+        StatDAO.insertLabelMinuteTimes(list)
+      })
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+  }
+
+
+
+
+  def videoTopNPerMinute(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit = {
     import session.implicits._
 
 /*    frame.printSchema()

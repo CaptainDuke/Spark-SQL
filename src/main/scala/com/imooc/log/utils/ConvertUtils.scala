@@ -21,7 +21,8 @@ object ConvertUtils {
   val learnStruct = StructType(
     Array(
       StructField("url", StringType),
-      StructField("name", StringType)
+      StructField("name", StringType),
+      StructField("label", StringType)
     )
   )
 
@@ -99,15 +100,16 @@ object ConvertUtils {
 
       var url = ""
       var name = ""
+      var label = ""
 
       url = splits(0)
       name = splits(1)
+      label = splits(2)
 
 
-      Row(url, name)
+      Row(url, name, label)
     } catch {
       case e: Exception => {
-        print(e.printStackTrace())
         Row(0)
       }
 
@@ -116,12 +118,13 @@ object ConvertUtils {
   }
 
   def main(args: Array[String]): Unit = {
-    print(learnParser("/learn/90, 展开与收起效果"))
+    /*print(learnParser("/learn/90, 展开与收起效果"))
     print(videoParser("/learn/40, /video/485, 5-1学以致用——Sublime综合技巧运用(07:00)"))
     val time = "2016-11-09 10:01:02"
     val day = time.substring(11, 19).split(":")
 
     val minute = day(0).toLong * 60l + day(1).toLong
-    print(minute)
+    print(minute)*/
+    print(learnParser("/learn/85, Java入门第一季, Java"))
   }
 }

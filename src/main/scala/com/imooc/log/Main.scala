@@ -103,8 +103,8 @@ object Main {
 //    learnNVideoDF.show(false)
 
     val cleanedLogDF = spark.createDataFrame(cleanedLogRDD.map(eachLine => ConvertUtils.parser(eachLine.toString)), ConvertUtils.struct)
-    cleanedLogDF.printSchema()
-    cleanedLogDF.show(false)
+//    cleanedLogDF.printSchema()
+//    cleanedLogDF.show(false)
 
 //    videoTopNPerMinute(spark, cleanedLogDF, learnNVideoDF)
 
@@ -167,12 +167,12 @@ object Main {
     val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
-    frameTemp.printSchema()
-    frameTemp.show(false)
+//    frameTemp.printSchema()
+//    frameTemp.show(false)
     val labelCity = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
       .groupBy($"originLog.city", $"courseMenu.learn.label").agg(count("*").as("times"))
 
-    labelCity.show(false)
+//    labelCity.show(false)
 
 
 
@@ -203,12 +203,12 @@ object Main {
     val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
-    frameTemp.printSchema()
-    frameTemp.show(false)
+//    frameTemp.printSchema()
+//    frameTemp.show(false)
     val labelMinute = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
       .groupBy($"originLog.minute", $"courseMenu.learn.label").agg(count("*").as("times"))
 
-    labelMinute.show(false)
+//    labelMinute.show(false)
 
 
 
@@ -249,12 +249,12 @@ object Main {
     val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
-    frameTemp.printSchema()
-    frameTemp.show(false)
+//    frameTemp.printSchema()
+//    frameTemp.show(false)
     val videoTopNDF = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
       .groupBy($"originLog.minute", $"courseMenu.learn.name").agg(count("*").as("times")).orderBy($"times".desc)
 
-    videoTopNDF.show(false)
+//    videoTopNDF.show(false)
 
 
 

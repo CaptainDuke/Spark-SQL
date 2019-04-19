@@ -134,7 +134,7 @@ object Main {
 
 
 
-
+//
 //    labelCityTimes(spark,cleanedLogDF, frameTemp)
 //    labelMinuteTimes(spark,cleanedLogDF, frameTemp)
 //
@@ -157,12 +157,11 @@ object Main {
 
     //labelCity.show(false)
 
-
+//    var list = new ListBuffer[MinuteCityElement] // new
 
     try {
-      val list = new ListBuffer[MinuteCityElement] // new
       minuteCity.foreachPartition(partition => {
-//        val list = new ListBuffer[MinuteCityElement]  //old
+        val list = new ListBuffer[MinuteCityElement]  //old
 
         partition.foreach(record => {
           val minute = record.getAs[Long]("minute")
@@ -173,9 +172,10 @@ object Main {
 //          StatDAO.insertMinuteCity(list)
         })
 
-//        StatDAO.insertMinuteCity(list)
+        StatDAO.insertMinuteCity(list)
       })
-      StatDAO.insertMinuteCity(list)
+//      println(list.toString())
+//      StatDAO.insertMinuteCity(list)
     } catch {
       case e: Exception => e.printStackTrace()
     }
@@ -222,9 +222,9 @@ object Main {
 
     try {
 
-      val list = new ListBuffer[LabelCityElement]
+//      val list = new ListBuffer[LabelCityElement]
       labelCity.foreachPartition(partition => {
-       // val list = new ListBuffer[LabelCityElement]
+        val list = new ListBuffer[LabelCityElement]
 
         partition.foreach(record => {
           val label = record.getAs[String]("label")
@@ -235,9 +235,9 @@ object Main {
 
         })
 
-//        StatDAO.insertLabelCityTimes(list)
+        StatDAO.insertLabelCityTimes(list)
       })
-      StatDAO.insertLabelCityTimes(list)
+//      StatDAO.insertLabelCityTimes(list)
     } catch {
       case e: Exception => e.printStackTrace()
     }
@@ -261,9 +261,9 @@ object Main {
 
 
     try {
-      val list = new ListBuffer[LabelMinuteElement]
+//      val list = new ListBuffer[LabelMinuteElement]
       labelMinute.foreachPartition(partition => {
-//        val list = new ListBuffer[LabelMinuteElement]
+        val list = new ListBuffer[LabelMinuteElement]
 
         partition.foreach(record => {
           val label = record.getAs[String]("label")
@@ -274,9 +274,9 @@ object Main {
 
         })
 
-//        StatDAO.insertLabelMinuteTimes(list)
+        StatDAO.insertLabelMinuteTimes(list)
       })
-      StatDAO.insertLabelMinuteTimes(list)
+//      StatDAO.insertLabelMinuteTimes(list)
 
     } catch {
       case e: Exception => e.printStackTrace()

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8ce22df5-e53f-4498-82ad-602cc1f45774" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/imooc/log/StatDAO.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1$$anonfun$apply$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1$$anonfun$apply$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDay$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1$$anonfun$apply$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$articleTopNPerDayPerCity$1$$anonfun$apply$7.class" afterDir="false" />
@@ -15,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelCityTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelCityTimes$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelMinuteTimes$1$$anonfun$apply$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelMinuteTimes$1$$anonfun$apply$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelMinuteTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$labelMinuteTimes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$minuteCityTimes$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$minuteCityTimes$1$$anonfun$apply$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$minuteCityTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$minuteCityTimes$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1$$anonfun$apply$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerDayPerCity$1$$anonfun$apply$6.class" afterDir="false" />
@@ -24,6 +26,17 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerMinute$1$$anonfun$apply$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerMinute$1$$anonfun$apply$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerMinute$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$$anonfun$videoTopNPerMinute$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimesCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTimesCity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTraffics$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayArticleTraffics$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTimesCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTimesCity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTraffics$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertDayVideoTraffics$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertLabelCityTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertLabelCityTimes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertLabelMinuteTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertLabelMinuteTimes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteCity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteCity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteVideoTimes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$$anonfun$insertMinuteVideoTimes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/imooc/log/StatDAO$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/sqltest1-1.0-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/sqltest1-1.0-jar-with-dependencies.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/sqltest1-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/sqltest1-1.0.jar" afterDir="false" />
@@ -327,7 +340,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555665334538" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555665529228" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -451,12 +464,12 @@
       <workItem from="1555483064066" duration="22237000" />
       <workItem from="1555587160466" duration="13021000" />
       <workItem from="1555609189305" duration="1682000" />
-      <workItem from="1555656821430" duration="3960000" />
+      <workItem from="1555656821430" duration="4316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65942000" />
+    <option name="totallyTimeSpent" value="66298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

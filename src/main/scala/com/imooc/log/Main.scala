@@ -115,14 +115,30 @@ object Main {
 //
 //    videoTopNPerDayTraffic(spark, cleanedLogDF)
 //
+    val frameTemp = cleanedLogDF.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===cleanedLogDF("url")).toDF()
+      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
+    frameTemp.cache()
+//    frameTemp.checkpoint()
+
+    cleanedLogDF.cache()
+//    cleanedLogDF.checkpoint()
     val arg = List[(SparkSession,DataFrame,DataFrame)=>Unit](labelCityTimes, labelMinuteTimes,minuteCityTimes)
 
-    arg.par.foreach(f=>f(spark,cleanedLogDF, learnNVideoDF))
-    /*labelCityTimes(spark,cleanedLogDF, learnNVideoDF)
-    labelMinuteTimes(spark,cleanedLogDF, learnNVideoDF)
+    arg.par.foreach(f=>f(spark,cleanedLogDF, frameTemp))
 
-    minuteCityTimes(spark,cleanedLogDF,learnNVideoDF)*/
+    frameTemp.unpersist(true)
+    cleanedLogDF.unpersist(true)
+
+
+
+
+
+
+//    labelCityTimes(spark,cleanedLogDF, frameTemp)
+//    labelMinuteTimes(spark,cleanedLogDF, frameTemp)
+//
+//    minuteCityTimes(spark,cleanedLogDF,frameTemp)
     spark.stop()
   }
 
@@ -144,8 +160,9 @@ object Main {
 
 
     try {
+      val list = new ListBuffer[MinuteCityElement] // new
       minuteCity.foreachPartition(partition => {
-        val list = new ListBuffer[MinuteCityElement]
+//        val list = new ListBuffer[MinuteCityElement]  //old
 
         partition.foreach(record => {
           val minute = record.getAs[Long]("minute")
@@ -153,23 +170,46 @@ object Main {
           val times = record.getAs[Long]("times")
 
           list.append(MinuteCityElement(minute, city, times))
+//          StatDAO.insertMinuteCity(list)
         })
 
-        StatDAO.insertMinuteCity(list)
+//        StatDAO.insertMinuteCity(list)
       })
+      StatDAO.insertMinuteCity(list)
     } catch {
       case e: Exception => e.printStackTrace()
     }
+
+/*    try {
+
+      minuteCity.foreachPartition(partition => {
+          val list = new ListBuffer[MinuteCityElement]
+
+        partition.foreach(record => {
+          val minute = record.getAs[Long]("minute")
+          val city = record.getAs[String]("city")
+          val times = record.getAs[Long]("times")
+
+          list.append(MinuteCityElement(minute, city, times))
+          //          StatDAO.insertMinuteCity(list)
+        })
+
+       StatDAO.insertMinuteCity(list)
+      })
+
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }*/
 
   }
 
 
 
-  def labelCityTimes(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit ={
+  def labelCityTimes(session: SparkSession, frame: DataFrame, frameTemp: DataFrame): Unit ={
     import session.implicits._
 
-    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
-      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+//    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+//      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
 //    frameTemp.printSchema()
 //    frameTemp.show(false)
@@ -181,8 +221,10 @@ object Main {
 
 
     try {
+
+      val list = new ListBuffer[LabelCityElement]
       labelCity.foreachPartition(partition => {
-        val list = new ListBuffer[LabelCityElement]
+       // val list = new ListBuffer[LabelCityElement]
 
         partition.foreach(record => {
           val label = record.getAs[String]("label")
@@ -190,10 +232,12 @@ object Main {
           val times = record.getAs[Long]("times")
 
           list.append(LabelCityElement(label, city, times))
+
         })
 
-        StatDAO.insertLabelCityTimes(list)
+//        StatDAO.insertLabelCityTimes(list)
       })
+      StatDAO.insertLabelCityTimes(list)
     } catch {
       case e: Exception => e.printStackTrace()
     }
@@ -201,12 +245,12 @@ object Main {
   }
 
 
-  def labelMinuteTimes(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit ={
+  def labelMinuteTimes(session: SparkSession, frame: DataFrame, frameTemp: DataFrame): Unit ={
     import session.implicits._
 
-    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+    /*val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
-
+*/
 //    frameTemp.printSchema()
 //    frameTemp.show(false)
     val labelMinute = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
@@ -217,8 +261,9 @@ object Main {
 
 
     try {
+      val list = new ListBuffer[LabelMinuteElement]
       labelMinute.foreachPartition(partition => {
-        val list = new ListBuffer[LabelMinuteElement]
+//        val list = new ListBuffer[LabelMinuteElement]
 
         partition.foreach(record => {
           val label = record.getAs[String]("label")
@@ -226,10 +271,13 @@ object Main {
           val times = record.getAs[Long]("times")
 
           list.append(LabelMinuteElement(label, minute, times))
+
         })
 
-        StatDAO.insertLabelMinuteTimes(list)
+//        StatDAO.insertLabelMinuteTimes(list)
       })
+      StatDAO.insertLabelMinuteTimes(list)
+
     } catch {
       case e: Exception => e.printStackTrace()
     }
@@ -239,7 +287,7 @@ object Main {
 
 
 
-  def videoTopNPerMinute(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit = {
+  def videoTopNPerMinute(session: SparkSession, frame: DataFrame, frameTemp: DataFrame): Unit = {
     import session.implicits._
 
 /*    frame.printSchema()
@@ -250,8 +298,8 @@ object Main {
 //    learnNVideoDF.select($"video.videoUrl").show(false)
 
 
-    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
-      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+//    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
+//      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
 //    frameTemp.printSchema()
 //    frameTemp.show(false)

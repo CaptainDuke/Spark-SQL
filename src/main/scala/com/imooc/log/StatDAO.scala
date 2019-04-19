@@ -22,10 +22,15 @@ object StatDAO {
       val sql = "insert into minute_city(minute, city, visit_times) values (?, ?, ?)"
       pstmt = connection.prepareStatement(sql)
 
+      var index = 0
+
       for(item <- list) {
+        index = index + 1
+
         pstmt.setLong(1, item.minute)
         pstmt.setString(2, item.city)
         pstmt.setLong(3, item.times)
+
 
         pstmt.addBatch()
       }

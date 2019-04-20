@@ -22,7 +22,6 @@ object Main {
      */
 
 
-
     //val Array(inputPath, learnFile, videoFile, outputPath) = ("", "", "", "")
 
     var inputPath = ""
@@ -86,9 +85,6 @@ object Main {
     }).filter(line => line!=None)
 
 
-    // 为了查询脏数据
-    /*val temp = cleanedLogRDD
-    temp.repartition(1).saveAsTextFile(outputPath)//"file:///Users/rocky/data/imooc/output/")*/
 
     val learnNameDF = spark.createDataFrame(learnNameRDD.map(eachLine => ConvertUtils.learnParser(eachLine)), ConvertUtils.learnStruct)
 
@@ -108,12 +104,7 @@ object Main {
 
 //    videoTopNPerMinute(spark, cleanedLogDF, learnNVideoDF)
 
-//
-//    articleTopNPerDay(spark, cleanedLogDF)
-//
-//    videoTopNPerDayPerCity(spark, cleanedLogDF)
-//
-//    videoTopNPerDayTraffic(spark, cleanedLogDF)
+
 //
     val frameTemp = cleanedLogDF.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===cleanedLogDF("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
@@ -123,6 +114,9 @@ object Main {
 
     cleanedLogDF.cache()
 //    cleanedLogDF.checkpoint()
+
+
+    // 优化：并行化入库
     val arg = List[(SparkSession,DataFrame,DataFrame)=>Unit](labelCityTimes, labelMinuteTimes,minuteCityTimes)
 
     arg.par.foreach(f=>f(spark,cleanedLogDF, frameTemp))
@@ -134,7 +128,7 @@ object Main {
 
 
 
-//
+//    非并行化入库
 //    labelCityTimes(spark,cleanedLogDF, frameTemp)
 //    labelMinuteTimes(spark,cleanedLogDF, frameTemp)
 //
@@ -147,16 +141,19 @@ object Main {
   def minuteCityTimes(session: SparkSession, frame: DataFrame, learnNVideoDF: DataFrame): Unit ={
     import session.implicits._
 
+
+    // 优化：将join表的操作统一提取到函数之外，将join之后的DataFrame传参进来
 //    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
 //      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
-//
-//    frameTemp.printSchema()
-//    frameTemp.show(false)
+
 
     val minuteCity = frame.groupBy($"city", $"minute").agg(count("*").as("times"))
 
-    //labelCity.show(false)
 
+
+
+
+    //TODO: 广播变量的实现，可以优化入库效率
 //    var list = new ListBuffer[MinuteCityElement] // new
 
     try {
@@ -174,32 +171,13 @@ object Main {
 
         StatDAO.insertMinuteCity(list)
       })
-//      println(list.toString())
+
 //      StatDAO.insertMinuteCity(list)
     } catch {
       case e: Exception => e.printStackTrace()
     }
 
-/*    try {
 
-      minuteCity.foreachPartition(partition => {
-          val list = new ListBuffer[MinuteCityElement]
-
-        partition.foreach(record => {
-          val minute = record.getAs[Long]("minute")
-          val city = record.getAs[String]("city")
-          val times = record.getAs[Long]("times")
-
-          list.append(MinuteCityElement(minute, city, times))
-          //          StatDAO.insertMinuteCity(list)
-        })
-
-       StatDAO.insertMinuteCity(list)
-      })
-
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }*/
 
   }
 
@@ -211,17 +189,10 @@ object Main {
 //    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
 //      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
 
-//    frameTemp.printSchema()
-//    frameTemp.show(false)
     val labelCity = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
       .groupBy($"originLog.city", $"courseMenu.learn.label").agg(count("*").as("times"))
 
-//    labelCity.show(false)
-
-
-
     try {
-
 //      val list = new ListBuffer[LabelCityElement]
       labelCity.foreachPartition(partition => {
         val list = new ListBuffer[LabelCityElement]
@@ -250,15 +221,9 @@ object Main {
 
     /*val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
-*/
-//    frameTemp.printSchema()
-//    frameTemp.show(false)
+    */
     val labelMinute = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
       .groupBy($"originLog.minute", $"courseMenu.learn.label").agg(count("*").as("times"))
-
-//    labelMinute.show(false)
-
-
 
     try {
 //      val list = new ListBuffer[LabelMinuteElement]
@@ -271,9 +236,7 @@ object Main {
           val times = record.getAs[Long]("times")
 
           list.append(LabelMinuteElement(label, minute, times))
-
         })
-
         StatDAO.insertLabelMinuteTimes(list)
       })
 //      StatDAO.insertLabelMinuteTimes(list)
@@ -283,206 +246,3 @@ object Main {
     }
 
   }
-
-
-
-
-  def videoTopNPerMinute(session: SparkSession, frame: DataFrame, frameTemp: DataFrame): Unit = {
-    import session.implicits._
-
-/*    frame.printSchema()
-    frame.show(false)
-    learnNVideoDF.printSchema()
-    learnNVideoDF.show(false)*/
-
-//    learnNVideoDF.select($"video.videoUrl").show(false)
-
-
-//    val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
-//      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
-
-//    frameTemp.printSchema()
-//    frameTemp.show(false)
-    val videoTopNDF = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
-      .groupBy($"originLog.minute", $"courseMenu.learn.name").agg(count("*").as("times")).orderBy($"times".desc)
-
-//    videoTopNDF.show(false)
-
-
-
-    try {
-      videoTopNDF.foreachPartition(partition => {
-        val list = new ListBuffer[MinuteVideoTimes]
-
-        partition.foreach(record => {
-          val minute = record.getAs[Long]("minute")
-          val name = record.getAs[String]("name")
-          val times = record.getAs[Long]("times")
-
-          list.append(MinuteVideoTimes(minute, name, times))
-        })
-
-        StatDAO.insertMinuteVideoTimes(list)
-      })
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }
-
-  }
-
-  def articleTopNPerDay(session: SparkSession, frame: DataFrame): Unit = {
-    import session.implicits._
-
-    val articleTopNDF = frame.filter($"sourceType"==="article")
-      .groupBy($"day", $"url").agg(count("sourceId").as("times")).orderBy($"times".desc)
-
-    //videoTopNDF.show(false)
-
-
-    try {
-      articleTopNDF.foreachPartition(partition => {
-        val list = new ListBuffer[DayArticleTimes]
-
-        partition.foreach(record => {
-          val day = record.getAs[String]("day")
-          val url = record.getAs[String]("url")
-          val times = record.getAs[Long]("times")
-
-          list.append(DayArticleTimes(day, url, times))
-        })
-
-        StatDAO.insertDayArticleTimes(list)
-      })
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }
-  }
-
-  def videoTopNPerDayPerCity(session: SparkSession, frame: DataFrame): Unit ={
-    import session.implicits._
-
-    val videoTopNDF = frame.filter($"sourceType"==="video")
-      .groupBy($"day",$"city", $"url").agg(count("url").as("times"))
-
-    val resultDF = videoTopNDF.select(
-      videoTopNDF("day"),
-      videoTopNDF("city"),
-      videoTopNDF("url"),
-      videoTopNDF("times"),
-      row_number().over(Window.partitionBy(videoTopNDF("city"))
-        .orderBy(videoTopNDF("times").desc)
-      ).as("times_rank")
-    ).filter("times_rank <= 3")
-
-    try {
-      resultDF.foreachPartition(partition => {
-        val list = new ListBuffer[DayVideoTimesCity]
-
-        partition.foreach(record => {
-          val day = record.getAs[String]("day")
-          val url = record.getAs[String]("url")
-          val times = record.getAs[Long]("times")
-          val city = record.getAs[String]("city")
-          val timesRank = record.getAs[Long]("times_rank")
-
-
-          list.append(DayVideoTimesCity(day, url, times, city, timesRank))
-        })
-
-        StatDAO.insertDayVideoTimesCity(list)
-      })
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }
-  }
-
-  def articleTopNPerDayPerCity(session: SparkSession, frame: DataFrame): Unit ={
-    import session.implicits._
-
-    val articleTopNDF = frame.filter($"sourceType"==="article")
-      .groupBy($"day",$"city", $"url").agg(count("url").as("times"))
-
-    val resultDF = articleTopNDF.select(
-      articleTopNDF("day"),
-      articleTopNDF("city"),
-      articleTopNDF("url"),
-      articleTopNDF("times"),
-      row_number().over(Window.partitionBy(articleTopNDF("city"))
-        .orderBy(articleTopNDF("times").desc)
-      ).as("times_rank")
-    ).filter("times_rank <= 3")
-
-    try {
-      resultDF.foreachPartition(partition => {
-        val list = new ListBuffer[DayArticleTimesCity]
-
-        partition.foreach(record => {
-          val day = record.getAs[String]("day")
-          val url = record.getAs[String]("url")
-          val times = record.getAs[Long]("times")
-          val city = record.getAs[String]("city")
-          val timesRank = record.getAs[Long]("times_rank")
-
-
-          list.append(DayArticleTimesCity(day, url, times, city, timesRank))
-        })
-
-        StatDAO.insertDayArticleTimesCity(list)
-      })
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }
-  }
-
-  def videoTopNPerDayTraffic(session: SparkSession, frame: DataFrame): Unit = {
-    import session.implicits._
-
-    val videoTopNDF = frame.filter($"sourceType"==="video")
-      .groupBy($"day", $"url").agg(count("traffic").as("traffics"))
-      .orderBy($"traffics".desc)
-
-    try {
-      videoTopNDF.foreachPartition(partition => {
-        val list = new ListBuffer[DayVideoTraffics]
-
-        partition.foreach(record => {
-          val day = record.getAs[String]("day")
-          val url = record.getAs[String]("url")
-          val traffics = record.getAs[Long]("traffics")
-
-          list.append(DayVideoTraffics(day, url, traffics))
-        })
-
-        StatDAO.insertDayVideoTraffics(list)
-      })
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }
-  }
-
-  def articleTopNPerDayTraffic(session: SparkSession, frame: DataFrame): Unit = {
-    import session.implicits._
-
-    val articleTopNDF = frame.filter($"sourceType"==="article")
-      .groupBy($"day", $"url").agg(count("traffic").as("traffics"))
-      .orderBy($"traffics".desc)
-
-    try {
-      articleTopNDF.foreachPartition(partition => {
-        val list = new ListBuffer[DayArticleTraffics]
-
-        partition.foreach(record => {
-          val day = record.getAs[String]("day")
-          val url = record.getAs[String]("url")
-          val traffics = record.getAs[Long]("traffics")
-
-          list.append(DayArticleTraffics(day, url, traffics))
-        })
-
-        StatDAO.insertDayArticleTraffics(list)
-      })
-    } catch {
-      case e: Exception => e.printStackTrace()
-    }
-  }
-}

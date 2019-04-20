@@ -22,10 +22,8 @@ object AccessConvertUtil {
     )
 
   )
-  /*
-  根据每一行输入信息，转换成输出的样式
-  @param log 输入的每一行记录信息
-   */
+
+
   def parseLog(log:String) ={
 
     try {

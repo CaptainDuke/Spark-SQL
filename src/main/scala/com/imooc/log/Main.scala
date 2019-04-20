@@ -13,7 +13,7 @@ object Main {
 
 
 
-    val remote_flag = 1
+    val remote_flag = 0
     /*
       1. 改 flag
       2. 改 master("local[2]")
@@ -54,8 +54,8 @@ object Main {
 
 
 
-//    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
-    val spark = SparkSession.builder().getOrCreate()
+    val spark = SparkSession.builder().appName("main").master("local[2]").getOrCreate()
+//    val spark = SparkSession.builder().getOrCreate()
 
 
 
@@ -107,23 +107,27 @@ object Main {
 
 //
     val frameTemp = cleanedLogDF.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===cleanedLogDF("url")).toDF()
-      .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
+      .withColumnRenamed("_1", "originLog").
+      withColumnRenamed("_2", "courseMenu")
 
-    frameTemp.cache()
-//    frameTemp.checkpoint()
 
-    cleanedLogDF.cache()
-//    cleanedLogDF.checkpoint()
+    frameTemp.printSchema()
+    frameTemp.show(false)
+//    frameTemp.cache()
+////    frameTemp.checkpoint()
+//
+//    cleanedLogDF.cache()
+////    cleanedLogDF.checkpoint()
 
 
     // 优化：并行化入库
-    val arg = List[(SparkSession,DataFrame,DataFrame)=>Unit](labelCityTimes, labelMinuteTimes,minuteCityTimes)
-
-    arg.par.foreach(f=>f(spark,cleanedLogDF, frameTemp))
-
-    frameTemp.unpersist(true)
-    cleanedLogDF.unpersist(true)
-
+//    val arg = List[(SparkSession,DataFrame,DataFrame)=>Unit](labelCityTimes, labelMinuteTimes,minuteCityTimes)
+//
+//    arg.par.foreach(f=>f(spark,cleanedLogDF, frameTemp))
+//
+//    frameTemp.unpersist(true)
+//    cleanedLogDF.unpersist(true)
+//
 
 
 
@@ -216,17 +220,17 @@ object Main {
   }
 
 
-  def labelMinuteTimes(session: SparkSession, frame: DataFrame, frameTemp: DataFrame): Unit ={
+  def labelMinuteTimes(session: SparkSession, frame: DataFrame, frameTemp: DataFrame): Unit = {
     import session.implicits._
 
     /*val frameTemp = frame.joinWith(learnNVideoDF, learnNVideoDF("video.videoUrl")===frame("url")).toDF()
       .withColumnRenamed("_1", "originLog").withColumnRenamed("_2", "courseMenu")
     */
-    val labelMinute = frameTemp.filter($"originLog.sourceType"==="video" || $"originLog.sourceType" === "code")
+    val labelMinute = frameTemp.filter($"originLog.sourceType" === "video" || $"originLog.sourceType" === "code")
       .groupBy($"originLog.minute", $"courseMenu.learn.label").agg(count("*").as("times"))
 
     try {
-//      val list = new ListBuffer[LabelMinuteElement]
+      //      val list = new ListBuffer[LabelMinuteElement]
       labelMinute.foreachPartition(partition => {
         val list = new ListBuffer[LabelMinuteElement]
 
@@ -239,10 +243,10 @@ object Main {
         })
         StatDAO.insertLabelMinuteTimes(list)
       })
-//      StatDAO.insertLabelMinuteTimes(list)
+      //      StatDAO.insertLabelMinuteTimes(list)
 
     } catch {
       case e: Exception => e.printStackTrace()
     }
+  }}
 
-  }
